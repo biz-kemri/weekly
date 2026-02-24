@@ -1,0 +1,49 @@
+[code]
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+<title>KERMI 글로벌동향</title>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+</head>
+<body>
+<a id="kakao-link-btn" href="javascript:;">
+<img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+</a>
+<script type='text/javascript'>
+
+  //<![CDATA[
+    Kakao.init('7eb45f261eec3ede95ed945b872a53f6');
+    Kakao.Link.createDefaultButton({
+      container: '#kakao-link-btn',
+      objectType: 'feed',
+      content: {
+        title: '글로벌동향',
+        description: '2026년 유럽 에너지전환 관련 주요 전망',
+        imageUrl: 'https://github.com/biz-kemri/weekly/blob/main/title.jpg',
+        link: {
+          mobileWebUrl: '이미지클릭시 이동할 모바일용 링크주소',
+          webUrl: '이미지클릭시 이동할 PC용 링크주소'
+        }
+      },
+      buttons: [
+        {
+          title: '버튼 타이틀',
+          link: {
+            mobileWebUrl: '버튼클릭시 이동할 모바일용 링크주소',
+            webUrl: '버튼클릭시 이동할 PC용 링크주소'
+          }
+        }
+      ]
+    });
+  //]]>
+</script>
+
+</body>
+</html>
+
+[/code]
