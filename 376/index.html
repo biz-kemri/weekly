@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swipe Slider</title>
-    <!-- Swiper CSS CDN -->
     <link rel="stylesheet" href="https://unpkg.com" />
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #000000; }
         .swiper { width: 100%; height: 100%; }
         .swiper-slide {
             display: flex; justify-content: center; align-items: center;
             font-size: 2rem; color: white;
         }
-        /* 페이지별 배경색 */
-        .slide1 { background-color: #000000; }
-        .slide2 { background-color: #000000; }
-        .slide3 { background-color: #000000; }
-        .slide4 { background-color: #000000; }
     </style>
 </head>
 <body>
@@ -25,11 +19,12 @@
     <!-- Swiper 구조 -->
     <div class="swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image001.png" alt="1페이지"></div>
-            <div class="swiper-slide slide2"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image002.png" alt="2페이지"></div>
-            <div class="swiper-slide slide3"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image003.png" alt="3페이지"></div>
-            <div class="swiper-slide slide4"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image004.png" alt="4페이지"></div>
+            <div class="swiper-slide slide1"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image001.png" alt="1페이지 style="max-width: 100%; height: auto;"></div>
+            <div class="swiper-slide slide2"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image002.png" alt="2페이지 style="max-width: 100%; height: auto;"></div>
+            <div class="swiper-slide slide3"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image003.png" alt="3페이지 style="max-width: 100%; height: auto;"></div>
+            <div class="swiper-slide slide4"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image004.png" alt="4페이지 style="max-width: 100%; height: auto;"></div>
         </div>
+        
         <!-- 페이저, 버튼 필요시 추가 -->
         <div class="swiper-pagination"></div>
     </div>
@@ -45,3 +40,4 @@
     </script>
 </body>
 </html>
+
