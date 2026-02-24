@@ -2,83 +2,45 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>글로벌동향</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Slider</title>
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com" />
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        .swiper { width: 100%; height: 100%; }
+        .swiper-slide {
+            display: flex; justify-content: center; align-items: center;
+            font-size: 2rem; color: white;
         }
-
-        /* 책의 전체 컨테이너 */
-        .book {
-            position: relative;
-            width: 1080px;
-            height: 1920px;
-            transition: transform 0.5s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        /* 각 페이지 공통 스타일 */
-        .page {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            transform-origin: left;
-            transform-style: preserve-3d;
-            transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-
-        .page img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            backface-visibility: hidden; /* 뒷면 숨김 */
-            border-radius: 0 10px 10px 0;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* 페이지가 넘어갔을 때의 회전 각도 */
-        .page.flipped {
-            transform: rotateY(-180deg);
-        }
-
-        /* 페이지 겹침 순서 제어 */
-        #p1 { z-index: 4; }
-        #p2 { z-index: 3; }
-        #p3 { z-index: 2; }
-        #p4 { z-index: 1;}
+        /* 페이지별 배경색 */
+        .slide1 { background-color: #000000; }
+        .slide2 { background-color: #000000; }
+        .slide3 { background-color: #000000; }
+        .slide4 { background-color: #000000; }
     </style>
 </head>
 <body>
-    <div class="book" id="book">
-        <!-- 각 페이지 (이미지 4장) -->
-        <div class="page" id="p1"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image001.png" alt="1페이지"></div>
-        <div class="page" id="p2"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image002.png" alt="2페이지"></div>
-        <div class="page" id="p3"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image003.png" alt="3페이지"></div>
-        <div class="page" id="p3"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image004.png" alt="4페이지"></div>
+
+    <!-- Swiper 구조 -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image001.png" alt="1페이지"></div>
+            <div class="swiper-slide slide2"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image002.png" alt="2페이지"></div>
+            <div class="swiper-slide slide3"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image003.png" alt="3페이지"></div>
+            <div class="swiper-slide slide4"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image004.png" alt="4페이지"></div>
+        </div>
+        <!-- 페이저, 버튼 필요시 추가 -->
+        <div class="swiper-pagination"></div>
     </div>
 
+    <!-- Swiper JS CDN -->
+    <script src="https://unpkg.com"></script>
     <script>
-        const pages = document.querySelectorAll('.page');
-        let currentPage = 0;
-
-        // 클릭할 때마다 순차적으로 페이지가 넘어감
-        document.getElementById('book').addEventListener('click', () => {
-            if (currentPage < pages.length - 1) {
-                pages[currentPage].classList.add('flipped');
-                currentPage++;
-            } else {
-                // 마지막 페이지 도달 시 초기화 (다시 덮기)
-                pages.forEach(page => page.classList.remove('flipped'));
-                currentPage = 0;
-            }
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal', // 가로 슬라이드
+            loop: false, // 무한 루프
+            pagination: { el: '.swiper-pagination', clickable: true },
         });
     </script>
 </body>
