@@ -7,15 +7,15 @@
     <!-- Swiper CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        body, html { position: relative; height: 100%; overflow: hidden; }
-        body { background-color: #000000; margin: 0; padding: 0; }
+        body, html { position: relative; height: 100%; overflow: hidden; background-color: #000000; margin: 0; padding: 0;  }
+        .responsive-img { max-width: 100%; height: auto; }
         .swiper { width: 100%; height: 100%; }
         .swiper-slide {
             display: flex; justify-content: center; align-items: center;
             font-size: 2rem; color: white;
         /* 이미지 비율 유지 */
         .swiper-slide img {
-            display: block; max-width: 100%; height: auto; object-fit: fill; 
+            display: block; max-width: 100%; height: 100%; object-fit: fill; 
         }
         }
     </style>
@@ -24,10 +24,10 @@
     <!-- Swiper 구조 -->
     <div class="swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide1"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image001.png" alt="1페이지 style="max-width: 100%; height: auto;"></div>
-            <div class="swiper-slide slide2"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image002.png" alt="2페이지 style="max-width: 100%; height: auto;"></div>
-            <div class="swiper-slide slide3"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image003.png" alt="3페이지 style="max-width: 100%; height: auto;"></div>
-            <div class="swiper-slide slide4"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image004.png" alt="4페이지 style="max-width: 100%; height: auto;"></div>
+            <div class="swiper-slide slide1"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image001.png" alt="1페이지 class="responsive-img"></div>
+            <div class="swiper-slide slide2"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image002.png" alt="2페이지 class="responsive-img"></div>
+            <div class="swiper-slide slide3"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image003.png" alt="3페이지 class="responsive-img"></div>
+            <div class="swiper-slide slide4"><img src="https://github.com/biz-kemri/weekly/raw/main/376/image004.png" alt="4페이지 class="responsive-img"></div>
         </div>
     </div>
 
@@ -44,6 +44,7 @@
     </script>
 </body>
 </html>
+
 
 
 
